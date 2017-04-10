@@ -17,4 +17,9 @@ You can run this example using
 mvn spring-boot:run
 
 ## More information
+To dispay the home.html
+http://localhost:8080/ViewAllATM
+
+To display well formed JSON response
+http://localhost:8080/api/ViewAllATM
 
