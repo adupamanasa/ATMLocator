@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Logs</title>
+</head>
+<body>
+	<div>
+		<table class="table table-bordered table-hover table-striped"
+			border="1">
+			<tr th:span="2">
+				<th>No.</th>
+				<th>Street</th>
+				<th>House Number</th>
+				<th>Postal Code</th>
+				<th>City</th>
+				<th>Geo Location :Lat</th>
+				<th>GeoLocation :Lng</th>
+				<th>Distance</th>
+				<th>Type</th>
+			</tr>
+			<tr>
+				<div th:if="${not #lists.isEmpty(atmLst)}">
+					<th:block th:each="atm : ${atmLst}">
+						<tr>
+							<td nowrap="nowrap" th:text="${atmLst.indexOf(atm)+1}" />
+							<td nowrap="nowrap" th:text="${atm.address.street}" />
+							<td nowrap="nowrap" th:text="${atm.address.housenumber}" />
+							<td nowrap="nowrap" th:text="${atm.address.postalcode}" />
+							<td nowrap="nowrap" th:text="${atm.address.city}" />
+							<td nowrap="nowrap" th:text="${atm.address.geoLocation.lat}" />
+							<td nowrap="nowrap" th:text="${atm.address.geoLocation.lng}" />
+							<td nowrap="nowrap" th:text="${atm.distance}" />
+							<td nowrap="nowrap" th:text="${atm.type}" />
+						</tr>
+					</th:block>
+				</div>
+			</tr>
+
+		</table>
+	</div>
+</body>
+</html>
